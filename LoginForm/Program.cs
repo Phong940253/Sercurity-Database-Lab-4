@@ -13,7 +13,7 @@ namespace LoginForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DanhSachNhanVien());
+            Application.Run(new Form1());
         }
     }
 }

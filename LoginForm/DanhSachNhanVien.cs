@@ -151,6 +151,7 @@ namespace LoginForm
                 byte[] enc = AES.Encrypt(Encoding.UTF8.GetBytes(textLuong.Text));
                 string cipherText = ByteArrayToString(enc);
                 string passwordHash = CommonEncrypt.Hash(textMatKhau.Text);
+                Console.WriteLine(passwordHash);
                 insertCommand += $"EXEC SP_INS_ENCRYPT_NHANVIEN '{textMaNV.Text}', N'{textHoTen.Text}', '{textEmail.Text}', '{cipherText}', '{textTenDN.Text}', '{passwordHash}';";
                 Console.WriteLine(insertCommand);
                 btnLuu.Enabled = true;
@@ -215,6 +216,11 @@ namespace LoginForm
             adapter.Fill(NhanVien);
             dgvNhanVien.DataSource = NhanVien;
             NhanVien = decryptColumnLuong(NhanVien);
+        }
+
+        private void DanhSachNhanVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

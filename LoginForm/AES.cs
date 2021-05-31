@@ -46,7 +46,7 @@ namespace LoginForm
                 BlockSize = 128,
                 Key = key,
                 Padding = PaddingMode.PKCS7,
-                Mode = CipherMode.ECB,
+                Mode = CipherMode.CBC,
                 IV = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
             };
         }

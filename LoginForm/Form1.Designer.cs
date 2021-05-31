@@ -116,7 +116,7 @@ namespace LoginForm
             // 
             // textUser
             // 
-            this.textUser.EditValue = "myEmail@mail.com";
+            this.textUser.EditValue = "NVA";
             this.textUser.Location = new System.Drawing.Point(100, 45);
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(342, 20);

@@ -27,19 +27,27 @@ namespace LoginForm
                     string passwordHash = Hash(textPassword.Text);
 
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM SINHVIEN where TENDN = '{username}' and convert(varchar(32), MATKHAU, 2) = '{passwordMd5}'", conn);
+                    SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM SINHVIEN where TENDN = '{username}' and cast(MATKHAU as varchar(max)) = '{passwordMd5}'", conn);
                     Console.WriteLine(cmd.CommandText);
                     int res = Convert.ToInt32(cmd.ExecuteScalar());
                     if (res > 0) success = true;
 
 
-                    cmd = new SqlCommand($"SELECT COUNT(*) FROM NHANVIEN where TENDN = '{username}' and convert(varchar(32), MATKHAU, 2) = '{passwordHash}'", conn);
+                    cmd = new SqlCommand($"SELECT COUNT(*) FROM NHANVIEN where TENDN = '{username}' and cast(MATKHAU as varchar(max)) = '{passwordHash}'", conn);
                     Console.WriteLine(cmd.CommandText);
                     res = Convert.ToInt32(cmd.ExecuteScalar());
                     if (res > 0) success = true;
-
-
-                    MessageBox.Show(success ? "Đăng nhập thành công!" : "tên đăng nhập và mật khẩu không hợp lệ");
+                    
+                    if (success){
+                        MessageBox.Show("Đăng nhập thành công!");
+                        this.Hide();
+                        Form danhsachnhanvien = new DanhSachNhanVien();
+                        danhsachnhanvien.ShowDialog();
+                    } else
+                    {
+                        MessageBox.Show("tên đăng nhập và mật khẩu không hợp lệ");
+                    }
+                    
 
                 }
                 catch (Exception ex)

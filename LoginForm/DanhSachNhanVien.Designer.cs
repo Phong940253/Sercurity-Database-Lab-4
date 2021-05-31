@@ -46,6 +46,7 @@ namespace LoginForm
             this.textMaNV = new DevExpress.XtraEditors.TextEdit();
             this.textHoTen = new DevExpress.XtraEditors.TextEdit();
             this.textEmail = new DevExpress.XtraEditors.TextEdit();
+            this.textLuong = new DevExpress.XtraEditors.SpinEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -76,7 +77,6 @@ namespace LoginForm
             this.emptySpaceItem14 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textLuong = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -85,6 +85,7 @@ namespace LoginForm
             ((System.ComponentModel.ISupportInitialize)(this.textMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -115,7 +116,6 @@ namespace LoginForm
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textLuong.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -285,6 +285,29 @@ namespace LoginForm
             this.textEmail.Size = new System.Drawing.Size(380, 20);
             this.textEmail.StyleController = this.layoutControl1;
             this.textEmail.TabIndex = 6;
+            // 
+            // textLuong
+            // 
+            this.textLuong.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textLuong.Location = new System.Drawing.Point(637, 79);
+            this.textLuong.Name = "textLuong";
+            this.textLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.textLuong.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.textLuong.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.textLuong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.textLuong.Size = new System.Drawing.Size(345, 20);
+            this.textLuong.StyleController = this.layoutControl1;
+            this.textLuong.TabIndex = 7;
+            this.textLuong.EditValueChanged += new System.EventHandler(this.textLuong_EditValueChanged);
             // 
             // Root
             // 
@@ -584,21 +607,6 @@ namespace LoginForm
             this.emptySpaceItem5.Size = new System.Drawing.Size(986, 19);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // textLuong
-            // 
-            this.textLuong.Location = new System.Drawing.Point(637, 79);
-            this.textLuong.Name = "textLuong";
-            this.textLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textLuong.Properties.DisplayFormat.FormatString = "c";
-            this.textLuong.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textLuong.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.textLuong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.textLuong.Size = new System.Drawing.Size(345, 20);
-            this.textLuong.StyleController = this.layoutControl1;
-            this.textLuong.TabIndex = 7;
-            this.textLuong.EditValueChanged += new System.EventHandler(this.textLuong_EditValueChanged);
-            // 
             // DanhSachNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +616,7 @@ namespace LoginForm
             this.Name = "DanhSachNhanVien";
             this.Text = "Danh sách nhân viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DanhSachNhanVien_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DanhSachNhanVien_FormClosed);
             this.Load += new System.EventHandler(this.DanhSachNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -617,6 +626,7 @@ namespace LoginForm
             ((System.ComponentModel.ISupportInitialize)(this.textMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -647,7 +657,6 @@ namespace LoginForm
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textLuong.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
